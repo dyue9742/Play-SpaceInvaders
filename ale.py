@@ -1,9 +1,9 @@
-from ale_python_interface import ALEInterface
+from ale_py import ALEInterface
 from random import randrange
 import sys
 
 sys.path.append("./src")
-from WriteFiles import write_and_save
+from WriteFile import write_and_save
 
 if len(sys.argv) < 2:
     print('Usage: %s rom_file' % sys.argv[0])
@@ -11,7 +11,7 @@ if len(sys.argv) < 2:
 
 ale = ALEInterface()
 
-USE_SDL = True
+USE_SDL = False
 if USE_SDL:
     ale.setBool(b'sound', False)
     ale.setBool(b'display_screen', True)
